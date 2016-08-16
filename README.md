@@ -1,4 +1,4 @@
-Nginx
+Nginx [![Build Status](https://travis-ci.org/SimpliField/ansible-nginx.svg?branch=master)](https://travis-ci.org/SimpliField/ansible-nginx) [![Ansible Role](https://img.shields.io/ansible/role/11519.svg?maxAge=2592000)](https://galaxy.ansible.com/SimpliField/nginx/)
 =========
 
 Ansible role to setup nginx
