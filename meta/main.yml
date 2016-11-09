@@ -17,4 +17,15 @@ galaxy_info:
   - web
   - proxy
   - nginx
-dependencies: []
+dependencies:
+- role: SimpliField.packages
+  packages:
+  - apt-transport-https
+  - python-pycurl
+- role: SimpliField.users
+  users:
+  - www:
+    name: "www"
+    comment: "www user"
+    createhome: "no"
+    shell: "/bin/false"
