@@ -18,6 +18,10 @@ galaxy_info:
   - proxy
   - nginx
 dependencies:
+- role: SimpliField.packages
+  packages:
+  - apt-transport-https
+  - python-pycurl
 - role: SimpliField.users
   users:
   - www:

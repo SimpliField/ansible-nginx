@@ -1,13 +1,4 @@
 ---
-- name: install apt-transport-https
-  apt:
-    pkg: "{{item}}"
-  with_items:
-  - apt-transport-https
-  - python-pycurl
-  tags:
-  - nginx
-
 - name: add nginx GPG key into apt
   apt_key:
     url: "http://nginx.org/keys/nginx_signing.key"
