@@ -2,8 +2,6 @@
 - name: install apt-transport-https
   apt:
     pkg: "{{item}}"
-    update_cache: true
-    cache_valid_time: 86400
   with_items:
   - apt-transport-https
   - python-pycurl
@@ -22,6 +20,14 @@
   apt_repository:
     repo: "deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx"
     state: present
+  register: nginx_repo_added
+  tags:
+  - nginx
+
+- name: apt update cache
+  apt:
+    update_cache: yes
+  when: nginx_repo_added.changed
   tags:
   - nginx
 
@@ -37,7 +43,6 @@
 - name: install nginx
   apt:
     pkg: nginx
-    update-cache: yes
   tags:
   - nginx
 
