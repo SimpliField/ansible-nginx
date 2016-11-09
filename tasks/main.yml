@@ -31,15 +31,6 @@
   tags:
   - nginx
 
-- name: create user www
-  user:
-    name: "www"
-    comment: "www user"
-    createhome: no
-    shell: "/bin/false"
-  tags:
-  - nginx
-
 - name: install nginx
   apt:
     pkg: nginx
