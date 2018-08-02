@@ -13,7 +13,7 @@
     name: "{{nginx_conf_dir}}/conf.d/{{ item }}"
     state: absent
   with_items: "{{ config_files.stdout_lines | default([]) }}"
-  when: item[:-5] not in nginx_configs.keys()
+  when: item[:-5] not in "{{nginx_configs.keys() | list}}"
   notify:
   - reload nginx
   tags:
